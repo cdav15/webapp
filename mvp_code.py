@@ -23,9 +23,9 @@ def get_data():
 
 try:
     df11 = get_data()
-    st.write("### Zillow Price Index Webapp")
-    st.write("## Developed by Chandler Davis")
-    st.write("Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
+    st.text("## Zillow Price Index Webapp")
+    st.text("### Developed by Chandler Davis")
+    st.text("Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
     cities = st.multiselect(
         "Choose cities", list(df11.index), ["Indianapolis, IN", "Chicago, IL", "Cincinnati, OH"]
     )
