@@ -14,7 +14,7 @@ import altair as alt
 
 
 def get_data():
-    path = 'rhttps://raw.githubusercontent.com/cdav15/webapp/main/Clean_Zillow_Price_Index.csv?raw=true'
+    path = (r'https://raw.githubusercontent.com/cdav15/webapp/main/Clean_Zillow_Price_Index.csv')
     df = pd.read_csv(path)
     df['City_State'] = df[['City', 'State']].agg(', '.join, axis=1)
     df11 = df.drop(labels=['City','State','City Code', 'Metro', 'County', 'Population Rank','Average_PI'], axis = 1)
