@@ -23,9 +23,9 @@ def get_data():
 
 try:
     df11 = get_data()
-    st.text("## Zillow Price Index Webapp")
-    st.text("### Developed by Chandler Davis")
-    st.text("Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
+    st.write("## Zillow Price Index Webapp")
+    st.write("### Developed by Chandler Davis")
+    st.write("Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
     cities = st.multiselect(
         "Choose cities", list(df11.index), ["Indianapolis, IN", "Chicago, IL", "Cincinnati, OH"]
     )
@@ -38,7 +38,7 @@ try:
         data = data.T.reset_index()
 
         data = pd.melt(data, id_vars=["index"]).rename(
-            columns={"index": "month", "value": "Zillow Price Index"}
+            columns={"index": "Month", "value": "Zillow Price Index"}
         )
         chart = (
              alt.Chart(data)
