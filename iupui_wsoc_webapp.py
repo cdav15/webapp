@@ -19,11 +19,11 @@ import math
 @st.cache_data()
 
 def get_data():
-    df = pd.read_csv('\\Users\\cadgo\\OneDrive\\Documents\\IUPUI_WSOC_FORWARDS.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/cdav15/webapp/main/IUPUI_WSOC_FORWARDS.csv')
     return df.set_index("Player")
 
 def get_data2():
-    df2 = pd.read_csv('\\Users\\cadgo\\OneDrive\\Documents\\Horizon_League_Goalkeepers.csv')
+    df2 = pd.read_csv('https://raw.githubusercontent.com/cdav15/webapp/main/Horizon_League_Goalkeepers.csv')
     return df2.set_index("Player")
 
 try:
