@@ -56,6 +56,7 @@ try:
                 color="City_State:N",
             )
         )
+        st.write("### Zillow Price Index Comparison Graph")
         st.altair_chart(chart, use_container_width=True)
 except:
     st.error("Error Present")
