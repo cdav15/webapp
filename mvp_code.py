@@ -30,9 +30,9 @@ try:
     dfraw = raw_data()
     st.write("## Zillow Price Index Webapp")
     st.write("### Developed by Chandler Davis")
-    st.write('Take a look at the data frame below')
+    st.write('Below, you can take a look at the dataframe used for this project.')
     st.dataframe(dfraw)
-    st.write("Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
+    st.write("### Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
     cities = st.multiselect(
         "Choose cities", list(df11.index), ["Indianapolis, IN", "Chicago, IL", "Cincinnati, OH"]
     )
