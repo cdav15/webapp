@@ -23,7 +23,7 @@ def get_data():
 def raw_data():
     path = ("https://raw.githubusercontent.com/cdav15/webapp/main/Clean_Zillow_Price_Index.csv")
     df1 = pd.read_csv(path)
-    return df1
+    return df1.set_index('City Code')
 
 try:
     df11 = get_data()
