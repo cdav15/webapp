@@ -21,16 +21,17 @@ def get_data():
     return df11.set_index('City_State')
 
 def raw_data():
-    path = ("https://raw.githubusercontent.com/cdav15/webapp/main/Clean_Zillow_Price_Index.csv")
-    df1 = pd.read_csv(path)
+    path1 = ("https://raw.githubusercontent.com/cdav15/webapp/main/Clean_Zillow_Price_Index.csv")
+    df1 = pd.read_csv(path1)
     return df1.set_index('City Code')
 
 try:
     df11 = get_data()
+    dfraw = raw_data()
     st.write("## Zillow Price Index Webapp")
     st.write("### Developed by Chandler Davis")
     st.write('Take a look at the data frame below')
-    st.dataframe(df1)
+    st.dataframe(dfraw)
     st.write("Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
     cities = st.multiselect(
         "Choose cities", list(df11.index), ["Indianapolis, IN", "Chicago, IL", "Cincinnati, OH"]
