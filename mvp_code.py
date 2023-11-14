@@ -23,6 +23,7 @@ def get_data():
 def raw_data():
     path1 = ("https://raw.githubusercontent.com/cdav15/webapp/main/Clean_Zillow_Price_Index.csv")
     df1 = pd.read_csv(path1)
+    df1 = df1.drop(labels=['Average_PI'], axis = 1)
     return df1.set_index('City Code')
 
 try:
