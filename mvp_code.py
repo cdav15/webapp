@@ -37,64 +37,56 @@ try:
     cities = st.multiselect(
         "Choose cities", list(df11.index), ["Indianapolis, IN", "Chicago, IL", "Cincinnati, OH"]
     )
-    if not cities:
-        st.error("Please select at least one city.")
-    else:
-        data = df11.loc[cities]
-        st.write("### Zillow Price Index", data.sort_index())
+    
+    data = df11.loc[cities]
+    st.write("### Zillow Price Index", data.sort_index())
         
-        data = data.T.reset_index()
-
-        data = pd.melt(data, id_vars=["index"]).rename(
+    data = data.T.reset_index()
+    data = pd.melt(data, id_vars=["index"]).rename(
             columns={"index": "Month", "value": "Zillow Price Index"}
-        )
-        chart = (
+    )
+    chart = (
              alt.Chart(data)
             .mark_area(opacity=0.3)
             .encode(
                 x="Month:T",
                 y=alt.Y("Zillow Price Index:Q", stack=None),
-                color="City_State:N",
-            )
-        )
-        st.write("### Zillow Price Index Comparison Graph")
-        st.altair_chart(chart, use_container_width=True)
+                color="City_State:N",            )
+    )
+    st.write("### Zillow Price Index Comparison Graph")
+    st.altair_chart(chart, use_container_width=True)
+    st.write("### Percentage Change Calculator")
+    st.write("The following is a calculator to allow you to view the percentage change of a city's Zillow Price Index over your specified time period")
+    st.write("#### City 1:")
+    city = st.selectbox("Choose a City", list(df11.index))
+    data2 = df11.loc[city]
 
-        st.write("### Percentage Change Calculator")
-        st.write("The following is a calculator to allow you to view the percentage change of a city's Zillow Price Index over your specified time period")
-        st.write("#### City 1:")
-        city = st.selectbox("Choose a City", list(df11.index))
-        data2 = df11.loc[city]
-
-        date1 = st.selectbox("Choose the start date", list(data2.index))
+    date1 = st.selectbox("Choose the start date", list(data2.index))
                              
-        default_value = 15           
-        date2 = st.selectbox("Choose the end date", list(data2.index), index = default_value)
+    default_value = 15           
+    date2 = st.selectbox("Choose the end date", list(data2.index), index = default_value)
         
-        value1 = data2.loc[date1]
+    value1 = data2.loc[date1]
         
-        value2 = data2.loc[date2]
+    value2 = data2.loc[date2]
 
-        percent_change = ((value2 - value1) / value1) * 100
+    percent_change = ((value2 - value1) / value1) * 100
 
-        st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
-        
-        st.write("#### City 2:")
-        city2 = st.selectbox("Choose a city for comparison", list(df11.index))
-        data22 = df11.loc[city2]
+    st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
+    st.write("#### City 2:")
+    city2 = st.selectbox("Choose a city for comparison", list(df11.index))
+    data22 = df11.loc[city2]
 
-        date11 = st.selectbox("Choose the start date", list(data22.index))
+    date11 = st.selectbox("Choose the start date", list(data22.index))
                              
-        default_value2 = 15           
-        date22 = st.selectbox("Choose the end date", list(data22.index), index=default_value2)
+    default_value2 = 15           
+    date22 = st.selectbox("Choose the end date", list(data22.index), index=default_value2)
+    value11 = data22.loc[date11]
         
-        value11 = data22.loc[date11]
-        
-        value22 = data22.loc[date22]
+    value22 = data22.loc[date22]
+    percent_change2 = ((value22 - value11) / value11) * 100
 
-        percent_change2 = ((value22 - value11) / value11) * 100
-
-        st.write(f"Percentage Change for {city2}: {percent_change2: .2f}%")
+    st.write(f"Percentage Change for {city2}: {percent_change2: .2f}%")
         
 except:
     st.error("Error Present")
