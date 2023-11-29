@@ -77,18 +77,18 @@ try:
         percent_change = ((value2 - value1) / value1) * 100
 
         st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
-
+        
         st.write("#### City 2:")
         city2 = st.selectbox("Choose a City to compare your first city to:", list(df11.index), index = 2)
         data3 = df11.loc[city2]
 
         date11 = st.selectbox("Choose the start date", list(data3.index))
-                             
+                            
         default_value2 = 20          
         date22 = st.selectbox("Choose the end date", list(data3.index), index = default_value2)
-        
+       
         value11 = data3.loc[date11]
-        
+       
         value22 = data3.loc[date22]
 
         percent_change1 = ((value22 - value11) / value11) * 100
