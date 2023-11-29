@@ -88,6 +88,12 @@ try:
     percent_change2 = ((value22 - value11) / value11) * 100
 
     st.write(f"Percentage Change for {city2}: {percent_change2: .2f}%")
+
+    st.write("                                           ")
+    st.write("                                           ")
+    st.write("                                           ")
+    
+    st.markdown("Webapp developed by Chandler Davis, https://www.linkedin.com/in/chandler-a-davis/")
         
 except Exception as e:
     st.error("Error Present: {}".format(str(e)))
