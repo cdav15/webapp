@@ -62,7 +62,7 @@ try:
         st.altair_chart(chart, use_container_width=True)
 
         st.write("### Percentage Change Calculator")
-        st.write("#### The following is a calculator to allow you to view the percentage change of a city's Zillow Price Index over your specified time period")
+        st.write("The following is a calculator to allow you to view the percentage change of a city's Zillow Price Index over your specified time period")
         st.write("#### City 1:")
         city = st.selectbox("Choose a City", list(df11.index))
         data2 = df11.loc[city]
@@ -89,9 +89,9 @@ try:
         default_value2 = 15           
         date22 = st.selectbox("Choose the end date", list(data22.index), index = default_value2)
         
-        value11 = data2.loc[date11]
+        value11 = data22.loc[date11]
         
-        value22 = data2.loc[date22]
+        value22 = data22.loc[date22]
 
         percent_change2 = ((value22 - value11) / value11) * 100
 
