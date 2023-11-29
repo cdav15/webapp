@@ -65,7 +65,7 @@ try:
 
         date1 = st.selectbox("Choose a date to begin the period you would like to analyze", list(data2.index))
                              
-        default_value = 5             
+        default_value = 15           
         date2 = st.selectbox("Choose a date to end the period you would like to analyze", list(data2.index), index = default_value)
         
         value1 = data2.loc[date1]
