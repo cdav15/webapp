@@ -76,7 +76,7 @@ try:
 
         percent_change = ((value2 - value1) / value1) * 100
 
-        st.write(f"Percentage Change for {city}: {percent_change:   .2f}%")
+        st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
         
         st.write("#### City 2:")
         city2 = st.selectbox("Choose a City to compare your first city to:", list(df11.index), index = 10)
@@ -93,7 +93,7 @@ try:
 
         percent_change1 = ((value22 - value11) / value11) * 100
 
-        st.write(f"Percentage Change for {city2}: {percent_change1:   .2f}%")
+        st.write(f"Percentage Change for {city2}: {percent_change1: .2f}%")
         
 except:
     st.error("Error Present")
