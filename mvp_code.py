@@ -62,8 +62,7 @@ try:
 
         city = st.selectbox("Choose a City to analyze a percentage change of their Zillow Price Index", list(df11.index))
         data2 = df11.loc[city]
-        data2 = pd.melt(data2, id_vars=["index"]).rename(
-            columns={"index": "Month", "value": "Zillow Price Index"})
+
         date1 = st.selectbox("Choose a date to begin the period you would like to analyze", list(data2.index))
                              
         default_value = 5             
