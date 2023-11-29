@@ -89,6 +89,9 @@ try:
 
     st.write(f"Percentage Change for {city2}: {percent_change2: .2f}%")
 
+
+    st.write(f"{city}: {percent_change: .2f} vs. {city2}: {percent_change2: .2f}%")
+
     st.write("                                           ")
     st.write("                                           ")
     st.write("                                           ")
