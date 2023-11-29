@@ -60,13 +60,15 @@ try:
         st.write("### Zillow Price Index Comparison Graph")
         st.altair_chart(chart, use_container_width=True)
 
+        st.write("### Percentage Change Calculator")
+        st.write("#### City 1:")
         city = st.selectbox("Choose a City to analyze a percentage change of their Zillow Price Index", list(df11.index))
         data2 = df11.loc[city]
 
-        date1 = st.selectbox("Choose a date to begin the period you would like to analyze", list(data2.index))
+        date1 = st.selectbox("Choose the start date", list(data2.index))
                              
         default_value = 15           
-        date2 = st.selectbox("Choose a date to end the period you would like to analyze", list(data2.index), index = default_value)
+        date2 = st.selectbox("Choose the end date", list(data2.index), index = default_value)
         
         value1 = data2.loc[date1]
         
@@ -75,6 +77,23 @@ try:
         percent_change = ((value2 - value1) / value1) * 100
 
         st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
+
+        st.write("#### City 2:")
+        city2 = st.selectbox("Choose a City to compare your first city to:", list(df11.index))
+        data3 = df11.loc[city2]
+
+        date11 = st.selectbox("Choose the start date", list(data3.index))
+                             
+        default_value = 15           
+        date22 = st.selectbox("Choose the end date", list(data3.index), index = default_value)
+        
+        value11 = data3.loc[date11]
+        
+        value22 = data3.loc[date22]
+
+        percent_change1 = ((value22 - value11) / value11) * 100
+
+        st.write(f"Percentage Change for {city2}: {percent_change1: .2f}%")
         
 except:
     st.error("Error Present")
