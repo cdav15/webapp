@@ -28,6 +28,7 @@ def raw_data():
 
 try:
     df11 = get_data()
+    df12 = get_data()
     dfraw = raw_data()
     st.write("## Zillow Price Index Webapp")
     st.write("### Developed by Chandler Davis")
@@ -79,7 +80,7 @@ try:
         st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
         st.write("#### City 2:")
         city2 = st.selectbox("Choose a City to analyze a percentage change of their Zillow Price Index", list(df11.index), index = 15)
-        data22 = df11.loc[city2]
+        data22 = df12.loc[city2]
 
         date11 = st.selectbox("Choose the start date", list(data22.index))
                              
