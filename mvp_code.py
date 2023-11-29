@@ -88,8 +88,8 @@ try:
 
     st.write(f"Percentage Change for {city2}: {percent_change2: .2f}%")
         
-except:
-    st.error("Error Present")
+except Exception as e:
+    st.error("Error Present: {}".format(str(e)))
     
 
         
