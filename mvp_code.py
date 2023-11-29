@@ -65,10 +65,10 @@ try:
         data2 = data2.T.reset_index()
         data2 = pd.melt(data2, id_vars=["index"]).rename(
             columns={"index": "Month", "value": "Zillow Price Index"}
-        date = st.selectbox("Choose a date to begin the period you would like to analyze", list(data2['Month'])
+        date1 = st.selectbox("Choose a date to begin the period you would like to analyze", list(data2['Month'])
         date2 = st.selectbox("Choose a date to end the period you would like to analyze", list(data2['Month'])
 
-        percent_change = ((date2 - date) / date) * 100
+        percent_change = ((date2 - date1) / date1) * 100
 
         st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
         
