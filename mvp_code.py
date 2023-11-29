@@ -62,16 +62,19 @@ try:
 
         city = st.selectbox("Choose a City to analyze a percentage change of their Zillow Price Index", list(df11.index))
         data2 = df11.loc[city]
-        data2 = data2.T.reset_index()
         data2 = pd.melt(data2, id_vars=["index"]).rename(
-            columns={"index": "Month", "value": "Zillow Price Index"}
-        date1 = st.selectbox("Choose a date to begin the period you would like to analyze", list(data2['Month'])
-        date2 = st.selectbox("Choose a date to end the period you would like to analyze", list(data2['Month'])
+            columns={"index": "Month", "value": "Zillow Price Index"})
+        date1 = st.selectbox("Choose a date to begin the period you would like to analyze", list(data2.index))
+                             
+        date2 = st.selectbox("Choose a date to end the period you would like to analyze", list(data2.index))
+        
+        value1 = data2.loc[date1]
+        
+        value2 = data2.loc[date2]
 
-        percent_change = ((date2 - date1) / date1) * 100
+        percent_change = ((value2 - value1) / value1) * 100
 
         st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
-        
         
 except:
     st.error("Error Present")
