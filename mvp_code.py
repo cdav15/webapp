@@ -79,7 +79,7 @@ try:
         st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
         
         st.write("#### City 2:")
-        city2 = st.selectbox("Choose a City to compare your first city to:", list(df11.index), index = 2)
+        city2 = st.selectbox("Choose a City to compare your first city to:", list(df11.index), index = 10)
         data3 = df11.loc[city2]
 
         date11 = st.selectbox("Choose the start date", list(data3.index))
