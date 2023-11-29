@@ -84,7 +84,7 @@ try:
 
         date11 = st.selectbox("Choose the start date", list(data3.index))
                              
-        default_value2 = 15           
+        default_value2 = 20          
         date22 = st.selectbox("Choose the end date", list(data3.index), index = default_value2)
         
         value11 = data3.loc[date11]
