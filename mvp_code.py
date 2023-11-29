@@ -92,6 +92,15 @@ try:
     st.write("                                           ")
     st.write("                                           ")
     st.write("                                           ")
+    st.write("                                           ")
+    st.write("                                           ")
+    st.write("                                           ")
+    st.write("                                           ")
+    st.write("                                           ")
+    st.write("                                           ")
+    st.write("                                           ")
+    st.write("                                           ")
+    st.write("                                           ")
     
     st.markdown("Webapp developed by Chandler Davis, https://www.linkedin.com/in/chandler-a-davis/")
         
