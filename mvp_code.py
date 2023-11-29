@@ -33,7 +33,7 @@ try:
     st.write("### Developed by Chandler Davis")
     st.write('Below, you can take a look at the dataframe used for this project.')
     st.dataframe(dfraw)
-    st.write("### Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
+    st.write("#### Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
     cities = st.multiselect(
         "Choose cities", list(df11.index), ["Indianapolis, IN", "Chicago, IL", "Cincinnati, OH"]
     )
