@@ -77,9 +77,10 @@ try:
     city2 = st.selectbox("Choose a city for comparison", list(df11.index))
     data22 = df11.loc[city2]
 
-    date11 = st.selectbox("Choose the start date", list(data22.index))
+    start_value = 5
+    date11 = st.selectbox("Choose the start date", list(data22.index), index=start_value)
                              
-    default_value2 = 15           
+    default_value2 = 20           
     date22 = st.selectbox("Choose the end date", list(data22.index), index=default_value2)
     value11 = data22.loc[date11]
         
