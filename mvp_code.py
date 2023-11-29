@@ -59,6 +59,20 @@ try:
         )
         st.write("### Zillow Price Index Comparison Graph")
         st.altair_chart(chart, use_container_width=True)
+
+        city = st.selectbox("Choose a City to analyze a percentage change of their Zillow Price Index", list(df11.index))
+        data2 = df11.loc[city]
+        data2 = data2.T.reset_index()
+        data2 = pd.melt(data2, id_vars=["index"]).rename(
+            columns={"index": "Month", "value": "Zillow Price Index"}
+        date = st.selectbox("Choose a date to begin the period you would like to analyze", list(data2['Month'])
+        date2 = st.selectbox("Choose a date to end the period you would like to analyze", list(data2['Month'])
+
+        percent_change = ((date2 - date) / date) * 100
+
+        st.write(f"Percentage Change for {city}: {percent_change: .2f}%")
+        
+        
 except:
     st.error("Error Present")
     
