@@ -109,7 +109,7 @@ try:
     st.write("                                           ")
     st.write("                                           ")
     
-    st.markdown("Webapp developed by Chandler Davis, https://github.com/cdav15/webapp/blob/main/README.md")
+    st.markdown("Link to Documentation: https://github.com/cdav15/webapp/blob/main/README.md")
         
 except Exception as e:
     st.error("Error Present: {}".format(str(e)))
