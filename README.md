@@ -1,6 +1,6 @@
 # Informatics Final Project Submission 
 
-## Chandler Davis
+### Project made by Chandler Davis: https://www.linkedin.com/in/chandler-a-davis/
 
 Link to web app: https://chandlerdavismvp.streamlit.app/
 
