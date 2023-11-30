@@ -21,6 +21,7 @@ The web app uses data visualization and a statistical calculator algorithm to sh
 
 Tools Used
 
--	Python: (including Pandas for data manipulation and cleaning, Vega-Altair for data visualizations within the web app, and Streamlit packages to aid in functionality and aesthetics)
--	GitHub: Hosts the repository in which the data and code are pulled for the web app to work. 
+-	Python: (including Pandas for data manipulation and cleaning, Vega-Altair for data visualizations within the web app, and Streamlit packages to aid in functionality and aesthetics).
+-	GitHub: Hosts the repository in which the data and code are pulled for the web app to work.
+-	Streamlit: Hosts the web app.
 
