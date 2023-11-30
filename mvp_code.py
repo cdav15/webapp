@@ -30,7 +30,7 @@ try:
     df11 = get_data()
     dfraw = raw_data()
     st.write("## Zillow Price Index Webapp")
-    st.write("### Developed by Chandler Davis")
+    st.write("#### Developed by Chandler Davis")
     st.write('Below, you can take a look at the dataframe used for this project.')
     st.dataframe(dfraw)
     st.write("#### Use the following search box to compare the Zillow Price Index between cities to follow housing trends")
