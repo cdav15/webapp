@@ -1,10 +1,10 @@
-Informatics Final Project Submission 
+## Informatics Final Project Submission 
 
-Chandler Davis
+# Chandler Davis
 
 Link to web app: https://chandlerdavismvp.streamlit.app/
 
-Streamlit Web App and Repository README File
+# Streamlit Web App and Repository README File
 
 Abstract
 
